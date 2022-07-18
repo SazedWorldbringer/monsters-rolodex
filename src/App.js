@@ -46,8 +46,13 @@ class App extends React.Component {
           type="search"
           placeholder="search monsters"
           onChange={(e) => {
-            this.setState({ searchField: e.target.value });
-            console.log(this.state);
+            this.setState({ searchField: e.target.value }, () =>
+              console.log(this.state)
+            );
+            // this callback as the second argument in setState instead of
+            // just another statement outside of the setState is because
+            // setState is an async function.
+            // will learn more about it in time.
           }}
         />
         <CardList monsters={this.state.monsters} />
