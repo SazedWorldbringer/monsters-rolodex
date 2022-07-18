@@ -10,23 +10,23 @@ class App extends React.Component {
       monsters: [
         {
           name: "Frankenstien",
-          id: 12345,
+          id: 1,
         },
         {
           name: "Frank",
-          id: 12346,
+          id: 2,
         },
         {
           name: "Stien",
-          id: 12347,
+          id: 3,
         },
         {
           name: "Ken",
-          id: 12348,
+          id: 4,
         },
         {
           name: "Ranken",
-          id: 12349,
+          id: 5,
         },
       ],
     };
