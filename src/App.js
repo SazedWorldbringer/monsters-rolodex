@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 
 import { CardList } from "./components/card-list/card-list.component";
+import { SearchBox } from "./components/search-box/search-box.component";
 
 class App extends React.Component {
   constructor(props) {
@@ -46,16 +47,9 @@ class App extends React.Component {
     );
     return (
       <div className="App">
-        <input
-          type="search"
+        <SearchBox
           placeholder="search monsters"
-          onChange={(e) => {
-            this.setState({ searchField: e.target.value });
-            // using a callback for console.log as the second argument in
-            // setState instead of just another statement outside of
-            // the setState is because setState is an async function.
-            // will learn more about it in time.
-          }}
+          handleChange={(e) => this.setState({ searchField: e.target.value })}
         />
         <CardList monsters={filteredMonsters} />
       </div>
