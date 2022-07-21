@@ -45,6 +45,7 @@ class App extends React.Component {
       .then((response) => response.json())
       .then((users) => this.setState({ monsters: users }));
   }
+
   shuffle(sourceArray) {
     for (var i = 0; i < sourceArray.length - 1; i++) {
       var j = i + Math.floor(Math.random() * (sourceArray.length - i));
@@ -56,18 +57,24 @@ class App extends React.Component {
     return sourceArray;
   }
 
+  handleChange = (e) => {
+    this.setState({ searchField: e.target.value });
+  };
+
   render() {
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter((monster) =>
       monster.name.toLowerCase().includes(searchField.toLowerCase())
     );
+
     this.shuffle(filteredMonsters);
+    console.log(filteredMonsters);
 
     return (
       <div className="App">
         <SearchBox
           placeholder="search monsters"
-          handleChange={(e) => this.setState({ searchField: e.target.value })}
+          handleChange={this.handleChange}
         />
         <CardList monsters={filteredMonsters} />
       </div>
