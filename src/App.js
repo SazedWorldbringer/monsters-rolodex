@@ -34,28 +34,30 @@ class App extends React.Component {
     };
   }
 
-  //  componentDidMount() {
-  //    fetch("https://jsonplaceholder.typicode.com/users")
-  //      .then((response) => response.json())
-  //      .then((users) => this.setState({ monsters: users }));
-  //  }
-
   componentDidMount() {
-    fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) => this.setState({ monsters: users }));
   }
 
-  shuffle(sourceArray) {
-    for (var i = 0; i < sourceArray.length - 1; i++) {
-      var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+  // fetching superheroes for the app, instead of monsters
+  //  componentDidMount() {
+  //    fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json")
+  //      .then((response) => response.json())
+  //      .then((users) => this.setState({ monsters: users }));
+  //  }
 
-      var temp = sourceArray[j];
-      sourceArray[j] = sourceArray[i];
-      sourceArray[i] = temp;
-    }
-    return sourceArray;
-  }
+  // shuffle an array
+  //  shuffle(sourceArray) {
+  //    for (var i = 0; i < sourceArray.length - 1; i++) {
+  //      var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+  //
+  //      var temp = sourceArray[j];
+  //      sourceArray[j] = sourceArray[i];
+  //      sourceArray[i] = temp;
+  //    }
+  //    return sourceArray;
+  //  }
 
   handleChange = (e) => {
     this.setState({ searchField: e.target.value });
@@ -67,7 +69,7 @@ class App extends React.Component {
       monster.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
-    this.shuffle(filteredMonsters);
+    //    this.shuffle(filteredMonsters);
     console.log(filteredMonsters);
 
     return (
