@@ -8,28 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      monsters: [
-        {
-          name: "Frankenstien",
-          id: 1,
-        },
-        {
-          name: "Frank",
-          id: 2,
-        },
-        {
-          name: "Stien",
-          id: 3,
-        },
-        {
-          name: "Ken",
-          id: 4,
-        },
-        {
-          name: "Ranken",
-          id: 5,
-        },
-      ],
+      monsters: [],
       searchField: "",
     };
   }
