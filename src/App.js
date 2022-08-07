@@ -49,7 +49,7 @@ class App extends React.Component {
     );
 
     //    this.shuffle(filteredMonsters);
-    console.log(filteredMonsters);
+    // console.log(filteredMonsters);
 
     return (
       <div className="App">
