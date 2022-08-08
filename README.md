@@ -1,7 +1,7 @@
 # Monsters Rolodex
 
 A project in Zero To Mastery's Complete React Course.
-Renders users from [jsonplaceholder](https://jsonplaceholder.typicode.com/users)
+Renders users from [jsonplaceholder](https://jsonplaceholder.typicode.com)
 and images from [robohash](https://robohash.org/)
 
 ## Built With
